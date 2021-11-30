@@ -1003,8 +1003,8 @@ def load_annotations(
             :meth:`AnnotationResults.load_credentials`
     """
     results = samples.load_annotation_results(anno_key, **kwargs)
-    label_schema = results.config.label_schema
     annotations = results.backend.download_annotations(results)
+    label_schema = results.config.label_schema
 
     for label_field, label_info in label_schema.items():
         label_type = label_info.get("type", None)
